@@ -162,20 +162,21 @@
   5.1. Python 설치
 
  
-Python 3.xx 버전을 다운로드
+      Python 3.xx 버전을 다운로드
 
 
 5.2. 코드 파일 준비
    
    
-   각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py)파일을 같은 폴더에 저장
+         각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py)
+         파일을 같은 폴더에 저장
   ![image](https://github.com/user-attachments/assets/b3185d02-dc8f-4c7b-a825-de59af52c61b)
 
 
 5.3. 코드 실행
   
   
- 터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행
+       터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행
 
 
 5.4. 실행 화면
