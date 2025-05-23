@@ -40,7 +40,7 @@
 ![image](https://github.com/user-attachments/assets/ca4332fb-bfaf-49d8-b8c0-e3f845bf9cdb)
 
 ## 3. 샘플 코드 구조
-user.py
+① user.py
 
     class User:
         def __init__(self, name):
@@ -55,7 +55,7 @@ user.py
     
         def checkout(self, website):
             return website.checkout(self)
-website.py
+② website.py
 
     class Website:
           def __init__(self, server):
@@ -69,7 +69,7 @@ website.py
       
           def checkout(self, user):
               return self.server.process_order(user)
-server.py
+③ server.py
         
     class Server:
          def __init__(self, database, payment_gateway):
@@ -87,7 +87,7 @@ server.py
              result = self.payment_gateway.pay(order)
              self.database.update_order_status(order, result)
              return result
-database.py
+④ database.py
 
     class Database:
         def query_products(self):
@@ -101,14 +101,14 @@ database.py
     
         def update_order_status(self, order, payment_result):
             order["status"] = "성공" if payment_result else "실패"
-payment_gateway.py
+⑤ payment_gateway.py
 
     class PaymentGateway:
         def pay(self, order):
             # 실제 결제 로직 대신 무조건 성공 처리
             return True
 
-main.py          
+⑥ main.py          
 
     from user import User
     from website import Website
