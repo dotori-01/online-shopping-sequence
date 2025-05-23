@@ -38,6 +38,8 @@
     Web-->>User: 주문/결제 결과 표시
 ![image](https://github.com/user-attachments/assets/5e41fee6-f753-4650-bdbd-5ae258df6260)
 
+
+## 3. 시퀸스 다이어그램을 기반으로 구현한 샘플 코드 구조
 2.1. user.py
 
     class User:
