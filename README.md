@@ -138,14 +138,27 @@
 
 
 ## 5. Python 환경에서 실행하는 방법 
-
 1.Python 설치
- Python 3.xx 버전을 다운로드
+
+ 
+Python 3.xx 버전을 다운로드
+
+
 2. 코드 파일 준비
-   각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py) 파일을 같은 폴더에 저장하기
+   
+   
+각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py) 파일을 같은 폴더에 저장하기
+
+
 4. 코드 실행
-  터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행한다.
+  
+  
+터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행한다.
+
+
 5. 결과 화면
+
+
 ![image](https://github.com/user-attachments/assets/108d8492-0618-4f87-9e8b-06b97950d8c2)
 
 
