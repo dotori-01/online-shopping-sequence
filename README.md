@@ -47,28 +47,28 @@ user.py
             self.name = name
             self.cart = []
 
-    def browse_products(self, website):
-        return website.show_products()
-
-    def add_to_cart(self, website, product):
-        website.add_to_cart(self, product)
-
-    def checkout(self, website):
-        return website.checkout(self)
+        def browse_products(self, website):
+            return website.show_products()
+    
+        def add_to_cart(self, website, product):
+            website.add_to_cart(self, product)
+    
+        def checkout(self, website):
+            return website.checkout(self)
 website.py
 
        class Website:
-    def __init__(self, server):
-        self.server = server
-
-    def show_products(self):
-        return self.server.get_product_list()
-
-    def add_to_cart(self, user, product):
-        self.server.add_cart_item(user, product)
-
-    def checkout(self, user):
-        return self.server.process_order(user)
+          def __init__(self, server):
+              self.server = server
+      
+          def show_products(self):
+              return self.server.get_product_list()
+      
+          def add_to_cart(self, user, product):
+              self.server.add_cart_item(user, product)
+      
+          def checkout(self, user):
+              return self.server.process_order(user)
 server.py
         
     class Server:
@@ -76,31 +76,31 @@ server.py
             self.database = database
             self.payment_gateway = payment_gateway
 
-    def get_product_list(self):
-        return self.database.query_products()
-
-    def add_cart_item(self, user, product):
-        self.database.save_cart(user, product)
-
-    def process_order(self, user):
-        order = self.database.save_order(user)
-        result = self.payment_gateway.pay(order)
-        self.database.update_order_status(order, result)
-        return result
+        def get_product_list(self):
+            return self.database.query_products()
+    
+        def add_cart_item(self, user, product):
+            self.database.save_cart(user, product)
+    
+        def process_order(self, user):
+            order = self.database.save_order(user)
+            result = self.payment_gateway.pay(order)
+            self.database.update_order_status(order, result)
+            return result
 database.py
 
     class Database:
         def query_products(self):
             return ["상품A", "상품B", "상품C"]
 
-    def save_cart(self, user, product):
-        user.cart.append(product)
-
-    def save_order(self, user):
-        return {"user": user.name, "items": user.cart}
-
-    def update_order_status(self, order, payment_result):
-        order["status"] = "성공" if payment_result else "실패"
+        def save_cart(self, user, product):
+            user.cart.append(product)
+    
+        def save_order(self, user):
+            return {"user": user.name, "items": user.cart}
+    
+        def update_order_status(self, order, payment_result):
+            order["status"] = "성공" if payment_result else "실패"
 payment_gateway.py
 
     class PaymentGateway:
