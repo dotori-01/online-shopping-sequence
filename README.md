@@ -146,5 +146,6 @@
 4. 코드 실행
   터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행한다.
 5. 결과 화면
-![image](https://github.com/user-attachments/assets/b71d7e20-af55-41c4-8410-7c4dd9a8e2ae)
+![image](https://github.com/user-attachments/assets/108d8492-0618-4f87-9e8b-06b97950d8c2)
+
 
