@@ -40,7 +40,7 @@
 
 
 ## 3. 시퀸스 다이어그램을 기반으로 구현한 샘플 코드 구조
-2.1. user.py
+3.1. user.py
 
     class User:
         def __init__(self, name):
@@ -55,7 +55,7 @@
     
         def checkout(self, website):
             return website.checkout(self)
-2.2. website.py
+3.2. website.py
 
     class Website:
           def __init__(self, server):
@@ -69,7 +69,7 @@
       
           def checkout(self, user):
               return self.server.process_order(user)
-2.3. server.py
+3.3. server.py
         
     class Server:
          def __init__(self, database, payment_gateway):
@@ -87,7 +87,7 @@
              result = self.payment_gateway.pay(order)
              self.database.update_order_status(order, result)
              return result
-2.4. database.py
+3.4. database.py
 
     class Database:
         def query_products(self):
@@ -101,14 +101,14 @@
     
         def update_order_status(self, order, payment_result):
             order["status"] = "성공" if payment_result else "실패"
-2.5. payment_gateway.py
+3.5. payment_gateway.py
 
     class PaymentGateway:
         def pay(self, order):
             # 실제 결제 로직 대신 무조건 성공 처리
             return True
 
-2.6. main.py          
+3.6. main.py          
 
     from user import User
     from website import Website
@@ -149,26 +149,26 @@
 
 
 ## 5. Python 환경에서 실행하는 방법 
-  ① Python 설치
+  5.1. Python 설치
 
  
 Python 3.xx 버전을 다운로드
 
 
-② 코드 파일 준비
+5.2. 코드 파일 준비
    
    
 각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py) 파일을 같은 폴더에 저장하기
 ![image](https://github.com/user-attachments/assets/b3185d02-dc8f-4c7b-a825-de59af52c61b)
 
 
-③ 코드 실행
+5.3. 코드 실행
   
   
 터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행한다.
 
 
-④ 실행 화면
+5.4. 실행 화면
 
 
 ![image](https://github.com/user-attachments/assets/108d8492-0618-4f87-9e8b-06b97950d8c2)
