@@ -40,7 +40,7 @@
 
 
 ## 3. 시퀸스 다이어그램을 기반으로 구현한 샘플 코드 구조
-3.1. user.py
+3 . 1 . user.py
 
     class User:
         def __init__(self, name):
@@ -55,7 +55,7 @@
     
         def checkout(self, website):
             return website.checkout(self)
-3.2. website.py
+3 . 2 . website.py
 
     class Website:
           def __init__(self, server):
@@ -69,7 +69,7 @@
       
           def checkout(self, user):
               return self.server.process_order(user)
-3.3. server.py
+3 . 3.  server.py
         
     class Server:
          def __init__(self, database, payment_gateway):
