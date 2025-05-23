@@ -38,7 +38,7 @@
     Web-->>User: 주문/결제 결과 표시
 ![image](https://github.com/user-attachments/assets/5e41fee6-f753-4650-bdbd-5ae258df6260)
 
-① user.py
+2.1. user.py
 
     class User:
         def __init__(self, name):
@@ -53,7 +53,7 @@
     
         def checkout(self, website):
             return website.checkout(self)
-② website.py
+2.2. website.py
 
     class Website:
           def __init__(self, server):
@@ -67,7 +67,7 @@
       
           def checkout(self, user):
               return self.server.process_order(user)
-③ server.py
+2.3. server.py
         
     class Server:
          def __init__(self, database, payment_gateway):
@@ -85,7 +85,7 @@
              result = self.payment_gateway.pay(order)
              self.database.update_order_status(order, result)
              return result
-④ database.py
+2.4. database.py
 
     class Database:
         def query_products(self):
@@ -99,14 +99,14 @@
     
         def update_order_status(self, order, payment_result):
             order["status"] = "성공" if payment_result else "실패"
-⑤ payment_gateway.py
+2.5. payment_gateway.py
 
     class PaymentGateway:
         def pay(self, order):
             # 실제 결제 로직 대신 무조건 성공 처리
             return True
 
-⑥ main.py          
+2.6. main.py          
 
     from user import User
     from website import Website
