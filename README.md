@@ -57,7 +57,7 @@ user.py
             return website.checkout(self)
 website.py
 
-      class Website:
+    class Website:
           def __init__(self, server):
               self.server = server
       
@@ -71,7 +71,7 @@ website.py
               return self.server.process_order(user)
 server.py
         
-     class Server:
+    class Server:
          def __init__(self, database, payment_gateway):
              self.database = database
              self.payment_gateway = payment_gateway
