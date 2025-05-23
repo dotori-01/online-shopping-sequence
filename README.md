@@ -40,8 +40,93 @@
 ![image](https://github.com/user-attachments/assets/ca4332fb-bfaf-49d8-b8c0-e3f845bf9cdb)
 
 ## 3. 샘플 코드 구조
-- 각 모듈 역할 설명
+user.py
 
+    class User:
+        def __init__(self, name):
+            self.name = name
+            self.cart = []
+
+    def browse_products(self, website):
+        return website.show_products()
+
+    def add_to_cart(self, website, product):
+        website.add_to_cart(self, product)
+
+    def checkout(self, website):
+        return website.checkout(self)
+website.py
+
+       class Website:
+    def __init__(self, server):
+        self.server = server
+
+    def show_products(self):
+        return self.server.get_product_list()
+
+    def add_to_cart(self, user, product):
+        self.server.add_cart_item(user, product)
+
+    def checkout(self, user):
+        return self.server.process_order(user)
+server.py
+        
+    class Server:
+        def __init__(self, database, payment_gateway):
+            self.database = database
+            self.payment_gateway = payment_gateway
+
+    def get_product_list(self):
+        return self.database.query_products()
+
+    def add_cart_item(self, user, product):
+        self.database.save_cart(user, product)
+
+    def process_order(self, user):
+        order = self.database.save_order(user)
+        result = self.payment_gateway.pay(order)
+        self.database.update_order_status(order, result)
+        return result
+database.py
+
+    class Database:
+        def query_products(self):
+            return ["상품A", "상품B", "상품C"]
+
+    def save_cart(self, user, product):
+        user.cart.append(product)
+
+    def save_order(self, user):
+        return {"user": user.name, "items": user.cart}
+
+    def update_order_status(self, order, payment_result):
+        order["status"] = "성공" if payment_result else "실패"
+payment_gateway.py
+
+    class PaymentGateway:
+        def pay(self, order):
+            # 실제 결제 로직 대신 무조건 성공 처리
+            return True
+
+main.py          
+
+    from user import User
+    from website import Website
+    from server import Server
+    from database import Database
+    from payment_gateway import PaymentGateway
+    
+    db = Database()
+    pg = PaymentGateway()
+    server = Server(db, pg)
+    website = Website(server)
+    user = User("홍길동")
+    
+    print("상품 목록:", user.browse_products(website))
+    user.add_to_cart(website, "상품A")
+    result = user.checkout(website)
+    print("주문 결과:", "성공" if result else "실패")
+    
 ## 4. 모듈 평가 (응집도, 결합도)
 응집도(Cohesion)
 각 모듈은 단일 책임 원칙(SRP)에 따라 하나의 역할에 집중되어 있다.
