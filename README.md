@@ -1,19 +1,8 @@
 # online-shopping-sequence
 "온라인 쇼핑몰 주문 시나리오의 시퀀스 다이어그램과 Python 샘플 코드 구현"
 
-User->>WebApp: 상품 검색
-WebApp->>User: 검색 결과 표시
-User->>WebApp: 상품 선택/장바구니 담기
-User->>WebApp: 주문 및 결제 요청
-WebApp->>Payment: 결제 정보 전달
-Payment-->>WebApp: 결제 성공/실패 응답
-alt 결제 성공
-    WebApp->>Delivery: 배송 요청
-    Delivery-->>WebApp: 배송 접수 확인
-    WebApp->>User: 주문/배송 확인 알림
-else 결제 실패
-    WebApp->>User: 결제 실패 알림
-end
+![image](https://github.com/user-attachments/assets/5c90dcb1-5792-495c-aa76-a3d960e38ed2)
+
 
 ## 2. 샘플 코드
 
