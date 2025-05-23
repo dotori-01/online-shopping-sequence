@@ -159,7 +159,7 @@
    
    
     각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py) 파일을 같은 폴더에 저장하기
-    ![image](https://github.com/user-attachments/assets/b3185d02-dc8f-4c7b-a825-de59af52c61b)
+  ![image](https://github.com/user-attachments/assets/b3185d02-dc8f-4c7b-a825-de59af52c61b)
 
 
 5.3. 코드 실행
@@ -171,6 +171,6 @@
 5.4. 실행 화면
 
 
-    ![image](https://github.com/user-attachments/assets/108d8492-0618-4f87-9e8b-06b97950d8c2)
+  ![image](https://github.com/user-attachments/assets/108d8492-0618-4f87-9e8b-06b97950d8c2)
 
 
