@@ -57,7 +57,7 @@ user.py
             return website.checkout(self)
 website.py
 
-       class Website:
+      class Website:
           def __init__(self, server):
               self.server = server
       
@@ -71,22 +71,22 @@ website.py
               return self.server.process_order(user)
 server.py
         
-    class Server:
-        def __init__(self, database, payment_gateway):
-            self.database = database
-            self.payment_gateway = payment_gateway
+     class Server:
+         def __init__(self, database, payment_gateway):
+             self.database = database
+             self.payment_gateway = payment_gateway
 
-        def get_product_list(self):
-            return self.database.query_products()
+         def get_product_list(self):
+             return self.database.query_products()
     
-        def add_cart_item(self, user, product):
-            self.database.save_cart(user, product)
-    
-        def process_order(self, user):
-            order = self.database.save_order(user)
-            result = self.payment_gateway.pay(order)
-            self.database.update_order_status(order, result)
-            return result
+         def add_cart_item(self, user, product):
+             self.database.save_cart(user, product)
+     
+         def process_order(self, user):
+             order = self.database.save_order(user)
+             result = self.payment_gateway.pay(order)
+             self.database.update_order_status(order, result)
+             return result
 database.py
 
     class Database:
