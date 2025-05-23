@@ -5,7 +5,7 @@
 온라인 쇼핑몰에서 상품을 구매하는 과정을 시퀀스 다이어그램으로 모델링하고, 이를 기반으로 샘플 코드를 구현한 예시입니다.
 또한 구현한 코드의 모듈 구조를 응집도와 결합도 관점에서 평가하였습니다.
 
-## 2. 시퀀스 다이어그램 (Mermaid)
+## 2. 시퀀스 다이어그램 (Mermaid.live 활용)
   
     sequenceDiagram
         participant User
@@ -32,14 +32,7 @@
     Web->>Server: 주문 요청
     Server->>DB: 주문 정보 저장
     Server->>Pay: 결제 요청
-    Pay-->>Server: 결제 결과(성공/실패)
-    Server->>DB: 결제 상태 업데이트
-    Server-->>Web: 주문/결제 결과 응답
-    Web-->>User: 주문/결제 결과 표시
-    
-![image](https://github.com/user-attachments/assets/ca4332fb-bfaf-49d8-b8c0-e3f845bf9cdb)
-
-## 3. 샘플 코드 구조
+    Pay-->>Se현
 ① user.py
 
     class User:
