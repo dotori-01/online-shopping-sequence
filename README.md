@@ -148,6 +148,7 @@ Python 3.xx 버전을 다운로드
    
    
 각 모듈(user.py, website.py, server.py, database.py, payment_gateway.py, main.py) 파일을 같은 폴더에 저장하기
+![image](https://github.com/user-attachments/assets/b3185d02-dc8f-4c7b-a825-de59af52c61b)
 
 
 ③ 코드 실행
