@@ -157,7 +157,7 @@ Python 3.xx 버전을 다운로드
 터미널(명령 프롬프트)을 열고 해당 폴더로 이동하고, python main.py 명령어를 입력하여 실행한다.
 
 
-④ 결과 화면
+④ 실행 화면
 
 
 ![image](https://github.com/user-attachments/assets/108d8492-0618-4f87-9e8b-06b97950d8c2)
