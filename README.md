@@ -1,4 +1,4 @@
-# 개인 실습 과제 1 (online-shopping-sequence)
+# 개인 실습 과제 1 (online-shopping-sequence)  20210015 도현명
 " 온라인 쇼핑몰 상품 구매 시스템"
 
 ## 목차
